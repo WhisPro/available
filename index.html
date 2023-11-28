@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>googol but better</title>
+    <title>Simple Search Engine</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -57,6 +57,7 @@
 
         .button-container {
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .search-results {
@@ -107,11 +108,10 @@
             <input type="text" id="searchInput" placeholder="Search Google or type a URL">
             <div class="button-container">
                 <button type="submit">Google Search</button>
-                <button type="button">I'm Feeling Lucky</button>
-                <!-- New button-link styled like a button -->
-                <a href="https://beta.character.ai" target="_blank" class="external-link">
-                    Character.ai
-                </a>
+                <div class="icon-button" onmousedown="startHold()" onmouseup="endHold()">
+                    <img src="https://characterai.io/static/favicon_v2.ico" alt="Character.ai Icon" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px;">
+                    Icon Button
+                </div>
             </div>
         </form>
 
@@ -131,8 +131,24 @@
             // Retrieve search query from input field
             var query = document.getElementById("searchInput").value;
 
-            // Perform search and update search results
-            // This is where you would connect to your backend or manipulate the DOM dynamically
+            // Redirect to the entered URL (you may want to add validation)
+            window.location.href = query;
+        }
+
+        // JavaScript for the icon button hold
+        var holdTimer;
+
+        function startHold() {
+            holdTimer = setInterval(function() {
+                // Add your logic for the hold action here
+                console.log("Holding...");
+            }, 100);
+        }
+
+        function endHold() {
+            clearInterval(holdTimer);
+            // Add your logic for when the hold is released here
+            console.log("Hold released");
         }
     </script>
 </body>
