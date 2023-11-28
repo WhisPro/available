@@ -48,10 +48,15 @@
             border-radius: 24px;
             cursor: pointer;
             font-size: 16px;
+            margin-right: 10px;
         }
 
         button:hover {
             background-color: #3367d6;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
         }
 
         .search-results {
@@ -77,13 +82,16 @@
 </head>
 <body>
     <header>
-        <img src="https://imgur.com/a/O7hYvRg" alt="Google (pero mejor) Logo">
+        <img src="https://i.imgur.com/O8Ayg6w.png" alt="Google (pero mejor) Logo">
     </header>
 
     <main>
         <form onsubmit="search(); return false;">
             <input type="text" id="searchInput" placeholder="Search Google or type a URL">
-            <button type="submit">Google Search</button>
+            <div class="button-container">
+                <button type="submit">Google Search</button>
+                <button type="button">I'm Feeling Lucky</button>
+            </div>
         </form>
 
         <div class="search-results" id="searchResults">
